@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup Flow</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    padding:20px;
+}
+
+.container{
+    width:100%;
+    max-width:400px;
+    background:#fff;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.2);
+    animation:fadeIn 0.6s ease-in-out;
+}
+
+h2{
+    text-align:center;
+    color:#333;
+    margin-bottom:25px;
+    font-size:28px;
+}
+
+input{
+    width:100%;
+    padding:14px;
+    margin:10px 0;
+    border:2px solid #e0e0e0;
+    border-radius:10px;
+    font-size:15px;
+    transition:0.3s;
+}
+
+input:focus{
+    outline:none;
+    border-color:#667eea;
+    box-shadow:0 0 8px rgba(102,126,234,0.3);
+}
+
+button{
+    width:100%;
+    padding:14px;
+    margin-top:15px;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(102,126,234,0.4);
+}
+
+button:active{
+    transform:scale(0.98);
+}
+
+.error{
+    color:#e74c3c;
+    font-size:14px;
+    margin-top:10px;
+    text-align:center;
+}
+
+.success{
+    color:#27ae60;
+    font-size:14px;
+    margin-top:10px;
+    text-align:center;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Create Account</h2>
+
+    <form id="signupForm">
+        <input type="text" id="name" placeholder="Full Name" required>
+
+        <input type="email" id="email" placeholder="Email Address" required>
+
+        <input type="password" id="password" placeholder="Password" required>
+
+        <input type="text" id="location" placeholder="Location (Optional)">
+
+        <button type="submit">Sign Up</button>
+
+        <p class="error" id="errorMsg"></p>
+        <p class="success" id="successMsg"></p>
+    </form>
+</div>
+
+<script>
+document.getElementById("signupForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let password = document.getElementById("password").value.trim();
+
+    let errorMsg = document.getElementById("errorMsg");
+    let successMsg = document.getElementById("successMsg");
+
+    errorMsg.textContent = "";
+    successMsg.textContent = "";
+
+    if(name.length < 3){
+        errorMsg.textContent = "Name must be at least 3 characters.";
+        return;
+    }
+
+    if(password.length < 6){
+        errorMsg.textContent = "Password must be at least 6 characters.";
+        return;
+    }
+
+    successMsg.textContent =
+        "Welcome " + name + "! Your account has been created successfully.";
+});
+</script>
+
+</body>
+</html>
