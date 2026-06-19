@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Email Template</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+    padding:20px;
+}
+
+.email-container{
+    max-width:600px;
+    margin:auto;
+    background:#ffffff;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+.header{
+    background:linear-gradient(135deg,#4f46e5,#7c3aed);
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+}
+
+.header h1{
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.header p{
+    font-size:16px;
+    opacity:0.9;
+}
+
+.content{
+    padding:35px 30px;
+    color:#333;
+}
+
+.content h2{
+    margin-bottom:15px;
+}
+
+.content p{
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.btn{
+    display:inline-block;
+    background:#4f46e5;
+    color:white;
+    text-decoration:none;
+    padding:14px 28px;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+.btn:hover{
+    background:#3730a3;
+}
+
+.features{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    margin-top:30px;
+}
+
+.feature-box{
+    flex:1;
+    background:#f8fafc;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+}
+
+.feature-box h3{
+    color:#4f46e5;
+    margin-bottom:10px;
+}
+
+.footer{
+    background:#111827;
+    color:#d1d5db;
+    text-align:center;
+    padding:20px;
+}
+
+.footer a{
+    color:#a5b4fc;
+    text-decoration:none;
+}
+
+@media(max-width:600px){
+    .features{
+        flex-direction:column;
+    }
+
+    .header h1{
+        font-size:26px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="email-container">
+
+    <div class="header">
+        <h1>Welcome to Our Community</h1>
+        <p>Stay updated with our latest news and offers</p>
+    </div>
+
+    <div class="content">
+        <h2>Hello User 👋</h2>
+
+        <p>
+            Thank you for joining us. We're excited to have you as part of our community.
+            Discover exclusive content, updates, and special offers tailored just for you.
+        </p>
+
+        <center>
+            <a href="#" class="btn">Get Started</a>
+        </center>
+
+        <div class="features">
+            <div class="feature-box">
+                <h3>🚀 Fast</h3>
+                <p>Quick access to all services.</p>
+            </div>
+
+            <div class="feature-box">
+                <h3>🔒 Secure</h3>
+                <p>Your data is always protected.</p>
+            </div>
+
+            <div class="feature-box">
+                <h3>💡 Smart</h3>
+                <p>Personalized experience for users.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2026 Your Company. All Rights Reserved.</p>
+        <p><a href="#">Unsubscribe</a> | <a href="#">Contact Us</a></p>
+    </div>
+
+</div>
+
+</body>
+</html>
